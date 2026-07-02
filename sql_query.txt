@@ -1,0 +1,42 @@
+-- ============================================
+-- EVENT: Auto Archive Aman (Batch Kecil)
+-- ============================================
+
+DROP EVENT IF EXISTS ev_archive_safe;
+
+CREATE EVENT ev_archive_safe
+ON SCHEDULE EVERY 1 DAY
+STARTS CONCAT(CURDATE(), ' 03:00:00') -- Jam 3 pagi (traffic rendah)
+DO
+BEGIN
+    DECLARE v_cutoff DATE;
+    DECLARE v_batch INT DEFAULT 10000;
+    DECLARE v_copied INT;
+    DECLARE v_deleted INT;
+    
+    SET v_cutoff = DATE_SUB(CURDATE(), INTERVAL 3 MONTH);
+    
+    archive_loop: LOOP
+        -- Copy batch ke archive
+        INSERT IGNORE INTO trackersql_archive (tanggal, sqle, usere)
+        SELECT tanggal, sqle, usere FROM trackersql
+        WHERE tanggal < v_cutoff
+        LIMIT v_batch;
+        
+        SET v_copied = ROW_COUNT();
+        
+        IF v_copied = 0 THEN
+            LEAVE archive_loop;
+        END IF;
+        
+        -- Delete batch yang sudah di-copy
+        DELETE t FROM trackersql t
+        INNER JOIN trackersql_archive a 
+        ON t.tanggal = a.tanggal AND t.sqle = a.sqle AND t.usere = a.usere
+        WHERE t.tanggal < v_cutoff
+        LIMIT v_batch;
+        
+        -- Jeda 2 detik agar tidak lock lama
+        DO SLEEP(2);
+    END LOOP;
+END;
