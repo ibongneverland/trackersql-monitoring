@@ -23,6 +23,17 @@ Seperti yang kita ketahui bahwa log aktifitas adalah mata batin tenaga IT dalam 
 Semoga aplikasi ini bermanfaat bagi rekan-rekan IT, khususnya para pengguna SIMKES Khanza.
 Terima Kasih.
 
+## Tampilan
+
+### Dashboard
+![alt text](Tangkapan Layar/1.png)
+
+### Pencarian Trackersql
+![alt text](Tangkapan Layar/2.png)
+
+### Update Summary
+![alt text](Tangkapan Layar/3.png)
+
 ## UPDATE! 2026-07-03
 
 ### Peringatan!
