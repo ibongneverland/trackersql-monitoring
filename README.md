@@ -23,9 +23,9 @@ Seperti yang kita ketahui bahwa log aktifitas adalah mata batin tenaga IT dalam 
 Semoga aplikasi ini bermanfaat bagi rekan-rekan IT, khususnya para pengguna SIMKES Khanza.
 Terima Kasih.
 
-UPDATE! 2026-07-03
+## UPDATE! 2026-07-03
 
-Peringatan!
+### Peringatan!
 Mohon untuk melakukan backup data trackersql sebelum menggunakan aplikasi ini, agar jika terjadi kesalahan, dapat segera dilakukan restore.
 Atau lakukan di server ujicoba atau development terlebih dahulu untuk memastikan bahwa program ini sesuai dengan fungsinya.
 Segala resiko ditanggung sendiri (user).
