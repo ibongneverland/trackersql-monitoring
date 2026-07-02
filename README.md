@@ -26,13 +26,13 @@ Terima Kasih.
 ## Tampilan
 
 ### Dashboard
-![alt text](Tangkapan Layar/1.png)
+![Dashboard](Tangkapan Layar/1.PNG)
 
 ### Pencarian Trackersql
-![alt text](Tangkapan Layar/2.png)
+![Pencarian Trackersql](Tangkapan Layar/2.PNG)
 
 ### Update Summary
-![alt text](Tangkapan Layar/3.png)
+![Update Summary](Tangkapan Layar/3.PNG)
 
 ## UPDATE! 2026-07-03
 
